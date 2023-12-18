@@ -31,8 +31,9 @@ $cont = query("SELECT * FROM contact")
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="#">Customer</a>
                     <a class="nav-link" href="service_catalog/service.php">Task Catalog</a>
-                    <a class="nav-link" href="#">Service Catalog</a>
+                    <a class="nav-link" href="service_catalog/service.php">Service Catalog</a>
                     <a class="nav-link" href="task_catalog/task_catalog.php">Offer Task</a>
+                    <a class="nav-link" href="offer_services/ofs.php">Offer Service</a>
                 </div>
             </div>
         </div>
