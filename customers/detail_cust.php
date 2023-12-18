@@ -29,7 +29,6 @@ $cust = query("SELECT * FROM customer WHERE id = $id")[0];
         <p><strong>Mobile:</strong> <?php echo $cust["mobile"] ?></p>
         <p><strong>Email:</strong> <?php echo $cust["email"] ?></p>
         <p><strong>Deskripsi:</strong> <?php echo $cust["detail"] ?></p>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
