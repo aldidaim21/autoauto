@@ -29,7 +29,7 @@ $users1 = query("SELECT * FROM customer");
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="#">Customer</a>
-                    <a class="nav-link" href="#">Task Catalog</a>
+                    <a class="nav-link" href="service_catalog/service.php">Task Catalog</a>
                     <a class="nav-link" href="#">Service Catalog</a>
                     <a class="nav-link" href="#">Offer Task</a>
                 </div>
