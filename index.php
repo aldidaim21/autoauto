@@ -1,6 +1,7 @@
 <?php
 require 'functions.php';
 $users1 = query("SELECT * FROM customer");
+$cont = query("SELECT * FROM contact")
 ?>
 
 
@@ -31,7 +32,7 @@ $users1 = query("SELECT * FROM customer");
                     <a class="nav-link" href="#">Customer</a>
                     <a class="nav-link" href="service_catalog/service.php">Task Catalog</a>
                     <a class="nav-link" href="#">Service Catalog</a>
-                    <a class="nav-link" href="#">Offer Task</a>
+                    <a class="nav-link" href="task_catalog/task_catalog.php">Offer Task</a>
                 </div>
             </div>
         </div>
@@ -57,8 +58,9 @@ $users1 = query("SELECT * FROM customer");
                             <a href="customers/update_cust.php?id=<?= $row["id"]; ?>" class="btn btn-primary">UPDATE</a>
                             <a href="customers/delete_cust.php?id=<?php echo $row["id"] ?>" class="btn btn-danger" role="button" aria-pressed="true" onclick="return confirm('yakin');">Delete</a>
                             <a href="customers/detail_cust.php?id=<?= $row["id"]; ?>" class="btn btn-dark">Detail customers</a>
-                            <a href="tambah_contact.php?id=<?= $row["id"]; ?>" class="btn btn-warning">Tambah detail contact</a>
-                            <a href="tambah_offer_services.php?id=<?= $row["id"]; ?>" class="btn btn-dark">Tambah detail offer services</a>
+                            <a href="detail_contact/tambah_contact.php?id=<?= $row["id"]; ?>" class="btn btn-warning">Tambah detail contact</a>
+                            <a href="detail_contact/update_contact.php?id=<?= $row["id"]; ?>" class="btn btn-warning">Update detail contact</a>
+
                         </td>
                     </tr>
                 <?php endforeach; ?>

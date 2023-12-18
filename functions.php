@@ -140,3 +140,124 @@ function update_layanan($data)
 	mysqli_query($conn, $query);
 	return mysqli_affected_rows($conn);
 }
+
+
+// Menambah fungsi untuk tabel contact
+function tambah_contact($data)
+{
+	global $conn;
+
+	$id = htmlspecialchars($data["id"]);
+	$contact_type_id = htmlspecialchars($data["contact_type_id"]);
+	$customer_id = htmlspecialchars($data["customer_id"]);
+	$schedule_id = htmlspecialchars($data["schedule_id"]);
+	$contact_details = htmlspecialchars($data["contact_details"]);
+
+	$query = "INSERT INTO contact
+			VALUES
+			('$id',
+			'$contact_type_id',
+			'$customer_id',
+			'$schedule_id',
+			'$contact_details', 
+			current_timestamp())
+			";
+
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+}
+function hapus_contact($id)
+{
+	global $conn;
+	mysqli_query($conn, "DELETE FROM contact WHERE id = $id");
+	return mysqli_affected_rows($conn);
+}
+
+function update_contact($data)
+{
+	global $conn;
+
+	$id = $data["id"];
+	$contact_type_id = htmlspecialchars($data["contact_type_id"]);
+	$customer_id = htmlspecialchars($data["customer_id"]);
+	$schedule_id = htmlspecialchars($data["schedule_id"]);
+	$contact_details = htmlspecialchars($data["contact_details"]);
+
+	$query = "UPDATE contact SET
+                contact_type_id = '$contact_type_id', 
+                customer_id = '$customer_id', 
+                schedule_id = '$schedule_id', 
+                contact_details = '$contact_details'
+                WHERE id = $id";
+
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+}
+
+
+
+
+
+// Fungsi Tambah task_catalog
+function task_catalog_tambah($data)
+{
+	global $conn;
+
+	$id = htmlspecialchars($data["id"]);
+	$task_name = htmlspecialchars($data["task_name"]);
+	$service_catalog_id = htmlspecialchars($data["service_catalog_id"]);
+	$description = htmlspecialchars($data["description"]);
+	$ref_interval = htmlspecialchars($data["ref_interval"]);
+	$ref_interval_min = htmlspecialchars($data["ref_interval_min"]);
+	$ref_interval_max = htmlspecialchars($data["ref_interval_max"]);
+	$describe = htmlspecialchars($data["describe"]);
+	$task_price = htmlspecialchars($data["task_price"]);
+	$is_active = htmlspecialchars($data["is_active"]);
+
+	$query = "INSERT INTO task_catalog
+				VALUES
+				('$id', '$task_name', '$service_catalog_id', '$description', '$ref_interval', '$ref_interval_min', '$ref_interval_max', '$describe', '$task_price', '$is_active')
+			 ";
+
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+}
+
+// Fungsi hapus
+function task_catalog_delete($id)
+{
+	global $conn;
+	mysqli_query($conn, "DELETE FROM task_catalog WHERE id = $id");
+	return mysqli_affected_rows($conn);
+}
+
+// Fungsi update data Task Catalog
+function task_catalog_update($data, $id)
+{
+	global $conn;
+
+	$task_name = htmlspecialchars($data["task_name"]);
+	$service_catalog_id = htmlspecialchars($data["service_catalog_id"]);
+	$description = htmlspecialchars($data["description"]);
+	$ref_interval = htmlspecialchars($data["ref_interval"]);
+	$ref_interval_min = htmlspecialchars($data["ref_interval_min"]);
+	$ref_interval_max = htmlspecialchars($data["ref_interval_max"]);
+	$describe = htmlspecialchars($data["describe"]);
+	$task_price = htmlspecialchars($data["task_price"]);
+	$is_active = htmlspecialchars($data["is_active"]);
+
+	$query = "UPDATE task_catalog SET
+                task_name = '$task_name',
+                service_catalog_id = '$service_catalog_id',
+                description = '$description',
+                ref_interval = '$ref_interval',
+                ref_interval_min = '$ref_interval_min',
+                ref_interval_max = '$ref_interval_max',
+                `describe` = '$describe',
+                task_price = '$task_price',
+                is_active = '$is_active'
+                WHERE id = $id";
+
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+}
